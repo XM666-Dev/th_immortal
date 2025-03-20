@@ -1,0 +1,35 @@
+<Entity tags="hittable">
+    <PhysicsBodyComponent
+        _tags="enabled_in_world"
+        uid="1"
+        allow_sleep="1"
+        angular_damping="0"
+        fixed_rotation="0"
+        is_bullet="1"
+        linear_damping="0"
+        auto_clean="1"
+        hax_fix_going_through_ground="1"
+        on_death_leave_physics_body="0"
+        on_death_really_leave_body="0"
+    />
+
+    <PhysicsImageShapeComponent
+        body_id="1"
+        centered="1"
+        image_file="mods/th_immortal/files/saisen/saisen.png"
+        material="wood_tree"
+    />
+
+    <VelocityComponent _tags="enabled_in_world" />
+
+    <ItemComponent
+        item_name="Saisen"
+        ui_description="$th_immortal.item_description_saisen"
+        custom_pickup_string="$th_immortal.itempickup_pay"
+        ui_display_description_on_pick_up_hint="1"
+        play_pick_sound="0"
+    />
+
+    <LuaComponent script_item_picked_up="mods/th_immortal/files/share_pickup.lua" />
+    <LuaComponent script_item_picked_up="mods/th_immortal/files/saisen/saisen_pickup.lua" />
+</Entity>

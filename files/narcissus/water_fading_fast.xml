@@ -1,0 +1,8 @@
+<Materials>
+    <CellDataChild
+        _parent="water_fading"
+        name="th_immortal.water_fading_fast"
+        tags="[liquid],[corrodible],[freezable],[water],[liquid_common],[chaotic_transmutation],[evaporable_fast]"
+        wang_color=""
+    />
+</Materials>

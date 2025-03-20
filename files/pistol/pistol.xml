@@ -1,0 +1,44 @@
+<Entity tags="wand">
+    <Base file="data/entities/base_item.xml">
+        <SpriteComponent offset_x="6" offset_y="6" />
+        <ItemComponent
+            play_hover_animation="1"
+            item_name="Pistol lunar"
+            always_use_item_name_in_ui="1"
+        />
+        <SimplePhysicsComponent _enabled="0" />
+    </Base>
+    <Base file="data/entities/base_wand.xml" />
+    <AbilityComponent
+        sprite_file="mods/th_immortal/files/pistol/pistol.png"
+        mana_max="1000"
+        mana_charge_speed="333"
+        max_charged_actions="3"
+        charge_wait_frames="0"
+        use_gun_script="1"
+        gun_level="10"
+        add_these_child_actions="SPEED,LARPA_DEATH,FUNKY_SPELL,EXPLOSIVE_PROJECTILE,FUNKY_SPELL,HOMING_CURSOR,FUNKY_SPELL"
+    >
+        <gun_config
+            reload_time="10"
+            deck_capacity="20"
+        />
+        <gunaction_config
+            fire_rate_wait="5"
+            spread_degrees="-360"
+            blood_count_multiplier="0"
+            gore_particles="-268435456"
+            ragdoll_fx="8"
+            extra_entities="mods/th_immortal/files/pistol/bullet.xml,"
+        />
+    </AbilityComponent>
+    <HotspotComponent
+        _tags="shoot_pos"
+        offset.x="12"
+        offset.y="-3"
+    />
+    <LuaComponent
+        _tags="enabled_in_hand"
+        script_source_file="mods/th_immortal/files/pistol/pistol.lua"
+    />
+</Entity>

@@ -1,0 +1,47 @@
+<Entity tags="wand,forgeable,th_immortal.narcissus">
+    <Base file="data/entities/base_item.xml">
+        <SpriteComponent offset_x="4" offset_y="5" has_special_scale="1" special_scale_y="0.5" />
+        <ItemComponent
+            play_hover_animation="1"
+            item_name="Narcissus"
+            always_use_item_name_in_ui="1"
+        />
+        <SimplePhysicsComponent _enabled="0" />
+    </Base>
+    <Base file="data/entities/base_wand.xml" />
+    <AbilityComponent
+        sprite_file="mods/th_immortal/files/narcissus/narcissus.png"
+        mana_max="370"
+        mana_charge_speed="153"
+        item_recoil_recovery_speed="10"
+        item_recoil_offset_coeff="-50"
+        item_recoil_rotation_coeff="0"
+        use_gun_script="1"
+        gun_level="3"
+        add_these_child_actions="I_SHAPE,MATERIAL_WATER,LANCE"
+    >
+        <gun_config
+            reload_time="9"
+            deck_capacity="9"
+        />
+        <gunaction_config
+            fire_rate_wait="3"
+            spread_degrees="3"
+            pattern_degrees="3"
+            screenshake="-3"
+            knockback_force="3"
+            material="water"
+            material_amount="1"
+            trail_material="th_immortal.water_fading_fast"
+            physics_impulse_coeff="3"
+            extra_entities="mods/th_immortal/files/narcissus/water.xml,"
+            game_effect_entities="data/entities/misc/effect_apply_wet.xml,"
+        />
+    </AbilityComponent>
+    <HotspotComponent
+        _tags="shoot_pos"
+        offset.x="24"
+    />
+    <ManaReloaderComponent _tags="enabled_in_world,enabled_in_hand,enabled_in_inventory" />
+    <ShotEffectComponent _tags="enabled_in_hand" extra_modifier="th_immortal.no_recoil" />
+</Entity>
