@@ -1,4 +1,4 @@
-<Entity tags="sacred_wand,wand,first_wand">
+<Entity tags="sacred_wand,wand,first_wand,th_immortal.gohei">
 
     <AbilityComponent
         amount_in_inventory="1"

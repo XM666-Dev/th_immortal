@@ -1,5 +1,5 @@
-dofile_once("mods/th_immortal/files/tactic.lua")
-local nxml = dofile_once("mods/th_immortal/files/nxml.lua")
+dofile_once("mods/th_immortal/files/lib/tactic.lua")
+local nxml = dofile_once("mods/th_immortal/files/lib/nxml.lua")
 
 ModLuaFileAppend("data/scripts/biomes/mountain/mountain_left_entrance.lua", "mods/th_immortal/files/saisen/mountain_left_entrance_appends.lua")
 ModLuaFileAppend("data/scripts/biomes/temple_altar_left.lua", "mods/th_immortal/files/saisen/temple_altar_left_appends.lua")
@@ -30,6 +30,7 @@ for xml in nxml.edit_file("data/biome/_pixel_scenes.xml") do
     xml:first_of("mBufferedPixelScenes"):create_child("PixelScene", {pos_x = 269, pos_y = -26104, just_load_an_entity = "mods/th_immortal/files/pistol/pistol.xml"})
 end
 
+ModLuaFileAppend("data/scripts/gun/gun_actions.lua", "mods/th_immortal/files/actions/gun_actions_appends.lua")
 ModMaterialsFileAdd("mods/th_immortal/files/materials.xml")
 append_translations("mods/th_immortal/files/translations.csv")
 
@@ -37,8 +38,9 @@ local receiver
 function OnWorldPreUpdate()
     if receiver == nil then
         local updator = EntityCreateNew()
-        EntityAddComponent2(updator, "LuaComponent", {script_source_file = "mods/th_immortal/files/share_pickup.lua"})
+        EntityAddComponent2(updator, "LuaComponent", {script_source_file = "mods/th_immortal/files/scripts/share_pickup.lua"})
         EntityAddComponent2(updator, "LuaComponent", {script_electricity_receiver_electrified = "mods/th_immortal/files/narcissus/through.lua"})
+        EntityAddComponent2(updator, "LuaComponent", {script_electricity_receiver_electrified = "mods/th_immortal/files/actions/kami_gfx.lua"})
         receiver = EntityAddComponent2(updator, "ElectricityReceiverComponent", {electrified_msg_interval_frames = 1})
     end
     ComponentSetValue2(receiver, "mLastFrameElectrified", GameGetFrameNum() + 1)

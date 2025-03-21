@@ -15,6 +15,6 @@
         play_pick_sound="0"
     />
 
-    <LuaComponent script_item_picked_up="mods/th_immortal/files/share_pickup.lua" />
+    <LuaComponent script_item_picked_up="mods/th_immortal/files/scripts/share_pickup.lua" />
     <LuaComponent script_item_picked_up="mods/th_immortal/files/saisen/saisen_pickup.lua" />
 </Entity>

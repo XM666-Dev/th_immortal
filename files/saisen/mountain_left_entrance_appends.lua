@@ -1,5 +1,5 @@
-dofile_once("mods/th_immortal/files/environment.lua")
-dofile_once("mods/th_immortal/files/utilities.lua")
+dofile_once("mods/th_immortal/files/lib/environment.lua")
+dofile_once("mods/th_immortal/files/lib/utilities.lua")
 
 local raw_init = init
 function init(x, y, w, h)

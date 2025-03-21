@@ -15,8 +15,8 @@ local function appends()
     end
 end
 appends()
-local f = ____cached_func
+local raw_cached_func = ____cached_func
 function ____cached_func()
-    f()
+    raw_cached_func()
     appends()
 end

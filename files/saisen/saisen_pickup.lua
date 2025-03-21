@@ -1,4 +1,4 @@
-dofile_once("mods/th_immortal/files/utilities.lua")
+dofile_once("mods/th_immortal/files/lib/utilities.lua")
 
 function item_pickup(saisen, pickupper)
     local wallet = EntityGetFirstComponent(pickupper, "WalletComponent")

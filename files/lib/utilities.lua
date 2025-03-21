@@ -1,4 +1,4 @@
-dofile_once("mods/th_immortal/files/tactic.lua")
+dofile_once("mods/th_immortal/files/lib/tactic.lua")
 
 mod = Entity{
     saisen_count = VariableField("th_immortal.saisen_count", "value_int"),
