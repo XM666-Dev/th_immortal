@@ -1,0 +1,14 @@
+<Materials>
+    <CellDataChild
+        _parent="water_fading"
+        tags="[liquid],[corrodible],[freezable],[water],[liquid_common],[chaotic_transmutation],[evaporable_fast]"
+        name="th_immortal.water_fading_fast"
+    />
+    <CellDataChild
+        _parent="wood_static"
+        name="th_immortal.wood_saisen"
+        burnable="0"
+        hp="200000"
+        durability="12"
+    />
+</Materials>

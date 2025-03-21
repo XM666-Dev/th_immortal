@@ -1,0 +1,5 @@
+mods/th_immortal/files/saisen/ragdoll/1.png
+mods/th_immortal/files/saisen/ragdoll/2.png
+mods/th_immortal/files/saisen/ragdoll/3.png
+mods/th_immortal/files/saisen/ragdoll/4.png
+mods/th_immortal/files/saisen/ragdoll/5.png

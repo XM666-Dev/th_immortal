@@ -1,18 +1,14 @@
-dofile_once("mods/th_immortal/files/tactic.lua")
+dofile_once("mods/th_immortal/files/utilities.lua")
 
-local Saisen = Entity{
-    pay_count = VariableField("th_immortal.pay_count", "value_int"),
-}
-
-function item_pickup(item, pickupper)
+function item_pickup(saisen, pickupper)
     local wallet = EntityGetFirstComponent(pickupper, "WalletComponent")
     if wallet == nil then return end
-    local item_object = Saisen(item)
-    local x, y = EntityGetTransform(item)
+    local saisen_object = Saisen(saisen)
+    local x, y = EntityGetTransform(saisen)
 
     local cost
-    local count = item_object.pay_count + 1
-    SetRandomSeed(item, count)
+    local count = saisen_object.pay_count + 1
+    SetRandomSeed(saisen, count)
     local outcome = Random(1, 22)
     if (count < 2) then
         outcome = 10
@@ -22,8 +18,20 @@ function item_pickup(item, pickupper)
         outcome = math.max(1, outcome - (count - 2))
     end
     if (outcome == 1) then
-        EntityLoad("mods/th_immortal/files/gohei/gohei.xml", x, y)
-        EntityKill(item)
+        for content in string.gmatch(saisen_object.contents, "[^,]+") do
+            shoot_projectile(0, content, x, y - 6, 0, -180)
+        end
+        for action in string.gmatch(saisen_object.actions, "[^,]+") do
+            local entity = CreateItemActionEntity(action, x, y - 6)
+            local veloctiy = EntityGetFirstComponent(entity, "VelocityComponent")
+            if veloctiy ~= nil then
+                ComponentSetValue2(veloctiy, "mVelocity", 0, -180)
+            end
+        end
+        EntityLoad("data/entities/particles/wand_pickup.xml", x, y - 6)
+        GamePlaySound("data/audio/Desktop/event_cues.bank", "event_cues/wand/create", x, y - 6)
+        LoadRagdoll("mods/th_immortal/files/saisen/ragdoll/filenames.txt", x, y, "wood_static", 1, 0, -3)
+        EntityKill(saisen)
         return
     elseif (outcome == 20) then
         cost = 200
@@ -34,10 +42,13 @@ function item_pickup(item, pickupper)
     else
         cost = 30
     end
+    cost = cost * saisen_object.cost_multiplier
 
     local money = ComponentGetValue2(wallet, "money") - cost
     if money < 0 then return end
     ComponentSetValue2(wallet, "money", money)
-    item_object.pay_count = count
-    GamePlaySound("data/audio/Desktop/event_cues.bank", "event_cues/goldnugget/create", x, y)
+    saisen_object.pay_count = count
+    mod.saisen_count = mod.saisen_count + 1
+    EntityLoad("data/entities/particles/gold_pickup_particles.xml", x, y - 6)
+    GamePlaySound("data/audio/Desktop/event_cues.bank", "event_cues/goldnugget/create", x, y - 6)
 end
