@@ -2,8 +2,8 @@ dofile_once("mods/th_immortal/files/lib/utilities.lua")
 
 local prev_damage_frame = 0
 function damage_received(damage, message, responsible, fatal, projectile_responsible)
-    if validate(responsible) ~= nil or validate(projectile_responsible) ~= nil then
-        local this = GetUpdatedEntityID()
+    local this = GetUpdatedEntityID()
+    if responsible ~= this and validate(responsible) ~= nil or validate(projectile_responsible) ~= nil then
         local this_object = Player(this)
         local damage_frame = GameGetFrameNum()
         if damage_frame < prev_damage_frame + 180 then
