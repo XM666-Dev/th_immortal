@@ -29,7 +29,7 @@
             blood_count_multiplier="0"
             gore_particles="-268435456"
             ragdoll_fx="8"
-            extra_entities="mods/th_immortal/files/pistol/bullet.xml,"
+            extra_entities="mods/th_immortal/files/pistol/pistol_shot.xml,"
         />
     </AbilityComponent>
     <HotspotComponent

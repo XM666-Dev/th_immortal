@@ -1,0 +1,30 @@
+<Entity name="$projectile_default" tags="projectile_player">
+    <Base file="mods/th_immortal/files/actions/kami/kami.xml">
+        <ProjectileComponent
+            lifetime="128"
+            muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_pink.xml"
+            bounces_left="1024"
+            bounce_energy="0"
+            bounce_at_any_angle="1"
+        >
+            <config_explosion
+                explosion_sprite="mods/th_immortal/files/actions/kami_homing/explosion_purple.xml"
+            />
+        </ProjectileComponent>
+        <SpriteComponent image_file="mods/th_immortal/files/actions/kami_homing/kami_homing.png" />
+        <ParticleEmitterComponent emitted_material_name="spark_purple" />
+        <ParticleEmitterComponent emitted_material_name="spark_purple" />
+        <ParticleEmitterComponent emitted_material_name="spark_purple" />
+        <ParticleEmitterComponent emitted_material_name="spark_purple" />
+        <VariableStorageComponent
+            value_string="mods/th_immortal/files/actions/kami_homing/kami_homing.xml"
+        />
+        <LuaComponent
+            script_source_file="mods/th_immortal/files/actions/kami_homing/kami_homing_sprite.lua"
+        />
+    </Base>
+    <HomingComponent />
+    <LuaComponent
+        script_source_file="mods/th_immortal/files/actions/projectile_bounce.lua"
+    />
+</Entity>

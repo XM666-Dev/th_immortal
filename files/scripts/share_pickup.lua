@@ -1,4 +1,4 @@
-dofile_once("mods/th_immortal/files/lib/tactic.lua")
+dofile_once("mods/th_immortal/files/lib/utilities.lua")
 
 local entities = {}
 local components = {}

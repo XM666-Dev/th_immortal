@@ -10,7 +10,7 @@
     </Base>
     <Base file="data/entities/base_wand.xml" />
     <AbilityComponent
-        sprite_file="mods/th_immortal/files/narcissus/narcissus.png"
+        sprite_file="mods/th_immortal/files/narcissus/narcissus_ui.png"
         mana_max="370"
         mana_charge_speed="153"
         item_recoil_recovery_speed="10"
@@ -26,15 +26,11 @@
         />
         <gunaction_config
             fire_rate_wait="3"
-            spread_degrees="3"
-            pattern_degrees="3"
             screenshake="-3"
-            knockback_force="3"
             material="water"
             material_amount="1"
-            trail_material="th_immortal.water_fading_fast"
-            physics_impulse_coeff="3"
-            extra_entities="mods/th_immortal/files/narcissus/water.xml,"
+            trail_material="th_immortal.water_fading_fast,"
+            extra_entities="mods/th_immortal/files/narcissus/narcissus_shot.xml,"
             game_effect_entities="data/entities/misc/effect_apply_wet.xml,"
         />
     </AbilityComponent>
@@ -43,5 +39,10 @@
         offset.x="24"
     />
     <ManaReloaderComponent _tags="enabled_in_world,enabled_in_hand,enabled_in_inventory" />
-    <ShotEffectComponent _tags="enabled_in_hand" extra_modifier="th_immortal.no_recoil" />
+    <ShotEffectComponent _tags="enabled_in_hand" extra_modifier="th_immortal.reduce_recoil" />
+    <LuaComponent
+        script_source_file="mods/th_immortal/files/narcissus/narcissus.lua"
+        execute_on_added="1"
+        execute_every_n_frame="-1"
+    />
 </Entity>

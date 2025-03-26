@@ -1,0 +1,8 @@
+<Entity name="$projectile_default" tags="projectile_player">
+    <Base file="mods/th_immortal/files/actions/kami/kami.xml">
+        <ProjectileComponent
+            speed_min="600"
+            speed_max="700"
+        />
+    </Base>
+</Entity>

@@ -1,0 +1,10 @@
+<Entity name="$projectile_default" tags="projectile_player">
+    <Base file="mods/th_immortal/files/actions/kami_homing/kami_homing.xml">
+        <ProjectileComponent
+            speed_min="600"
+            speed_max="700"
+            lifetime="256"
+        />
+        <HomingComponent homing_targeting_coeff="200" />
+    </Base>
+</Entity>

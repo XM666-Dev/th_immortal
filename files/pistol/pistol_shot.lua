@@ -8,5 +8,5 @@ end
 local projectile = EntityGetFirstComponent(this, "ProjectileComponent")
 if projectile ~= nil then
     local shooter = ComponentGetValue2(projectile, "mWhoShot")
-    EntityAddComponent2(shooter, "LuaComponent", {script_shot = "mods/th_immortal/files/pistol/pure.lua", remove_after_executed = true})
+    EntityAddComponent2(shooter, "LuaComponent", {script_shot = "mods/th_immortal/files/pistol/purifying_shot.lua", remove_after_executed = true})
 end

@@ -11,4 +11,17 @@
         hp="200000"
         durability="12"
     />
+    <CellDataChild
+        _parent="plant_material"
+        vegetation_sprite=""
+    >
+        <Graphics texture_file="" color="" />
+    </CellDataChild>
+    <Reaction
+        probability="100"
+        input_cell1="plant_material"
+        input_cell2="soil"
+        output_cell1="air"
+        output_cell2="air"
+    />
 </Materials>

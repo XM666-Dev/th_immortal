@@ -1,0 +1,11 @@
+<Entity name="$projectile_default" tags="projectile_player">
+    <Base file="mods/th_immortal/files/actions/orb_large/orb_large.xml">
+        <ProjectileComponent
+            penetrate_entities="1"
+            collide_with_entities="0"
+            collide_with_world="0"
+        />
+    </Base>
+    <LuaComponent script_source_file="mods/th_immortal/files/actions/projectile_pierce.lua" />
+    <LuaComponent script_source_file="mods/th_immortal/files/actions/projectile_collide.lua" />
+</Entity>

@@ -1,0 +1,20 @@
+<Entity>
+    <ItemComponent
+        auto_pickup="1"
+        play_spinning_animation="0"
+        play_pick_sound="0"
+        item_name="Power"
+    />
+    <SpriteComponent
+        image_file="mods/th_immortal/files/items/power/power.png"
+        offset_x="96"
+        offset_y="256"
+        has_special_scale="1"
+        special_scale_x="0.03125"
+        special_scale_y="0.03125"
+        z_index="-1.5"
+    />
+    <SpriteOffsetAnimatorComponent />
+    <LuaComponent script_item_picked_up="mods/th_immortal/files/items/power/power.lua" />
+    <LifetimeComponent lifetime="3600" fade_sprites="1" />
+</Entity>

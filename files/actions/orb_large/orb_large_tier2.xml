@@ -1,0 +1,4 @@
+<Entity name="$projectile_default" tags="projectile_player">
+    <Base file="mods/th_immortal/files/actions/orb_large/orb_large_tier1.xml" />
+    <VariableStorageComponent _tags="th_immortal.pierce_count" value_int="2" />
+</Entity>

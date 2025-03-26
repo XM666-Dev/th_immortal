@@ -1,0 +1,8 @@
+<Entity>
+    <GameEffectComponent effect="KNOCKBACK" frames="120" />
+    <Base file="data/entities/particles/knockback.xml" />
+    <LuaComponent
+        script_source_file="mods/th_immortal/files/narcissus/effect_stun.lua"
+        remove_after_executed="1"
+    />
+</Entity>

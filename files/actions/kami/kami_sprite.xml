@@ -1,0 +1,8 @@
+<Entity>
+    <ProjectileComponent lifetime="0" />
+    <SpriteComponent
+        image_file="mods/th_immortal/files/actions/kami/kami_ui.png"
+        offset_x="8"
+        offset_y="8"
+    />
+</Entity>

@@ -12,7 +12,7 @@
         max_amount_in_inventory="1"
         reload_time_frames="0"
         shooting_reduces_amount_in_inventory="0"
-        sprite_file="mods/th_immortal/files/gohei/handgun_ui.xml"
+        sprite_file="mods/th_immortal/files/gohei/gohei_ui.xml"
         swim_propel_amount="0"
         throw_as_item="0"
         ui_name="Bolt staff"
@@ -53,9 +53,9 @@
         _tags="enabled_in_world,enabled_in_hand,enabled_in_inventory">
     </ManaReloaderComponent>
 
-    <Entity tags="th_immortal.cloth">
+    <Entity tags="th_immortal.kami">
         <InheritTransformComponent _tags="enabled_in_world,enabled_in_hand,enabled_in_inventory">
-            <Transform position.x="8" position.y="1" />
+            <Transform position.x="8" position.y="-0.5" />
         </InheritTransformComponent>
         <VerletPhysicsComponent
             _tags="enabled_in_world,enabled_in_hand,enabled_in_inventory"
@@ -64,33 +64,36 @@
         />
         <SpriteComponent
             _tags="enabled_in_world,enabled_in_hand"
-            image_file="mods/th_immortal/files/gohei/cloth.png"
+            image_file="mods/th_immortal/files/gohei/kami.png"
             update_transform="0"
             update_transform_rotation="0"
+            offset_y="0.5"
         />
         <SpriteComponent
             _tags="enabled_in_world,enabled_in_hand"
-            image_file="mods/th_immortal/files/gohei/cloth.png"
+            image_file="mods/th_immortal/files/gohei/kami.png"
             update_transform="0"
             update_transform_rotation="0"
+            offset_y="0"
         />
         <SpriteComponent
             _tags="enabled_in_world,enabled_in_hand"
-            image_file="mods/th_immortal/files/gohei/cloth.png"
+            image_file="mods/th_immortal/files/gohei/kami.png"
             update_transform="0"
             update_transform_rotation="0"
+            offset_y="-0.5"
         />
         <SpriteComponent
             _tags="enabled_in_world,enabled_in_hand"
-            image_file="mods/th_immortal/files/gohei/cloth.png"
+            image_file="mods/th_immortal/files/gohei/kami.png"
             update_transform="0"
             update_transform_rotation="0"
+            offset_y="-1"
         />
     </Entity>
-
-    <Entity tags="th_immortal.cloth">
+    <Entity tags="th_immortal.kami">
         <InheritTransformComponent _tags="enabled_in_world,enabled_in_hand,enabled_in_inventory">
-            <Transform position.x="8" position.y="-1" />
+            <Transform position.x="8" position.y="1.5" />
         </InheritTransformComponent>
         <VerletPhysicsComponent
             _tags="enabled_in_world,enabled_in_hand,enabled_in_inventory"
@@ -99,37 +102,40 @@
         />
         <SpriteComponent
             _tags="enabled_in_world,enabled_in_hand"
-            image_file="mods/th_immortal/files/gohei/cloth.png"
+            image_file="mods/th_immortal/files/gohei/kami.png"
             update_transform="0"
             update_transform_rotation="0"
+            offset_y="0.5"
         />
         <SpriteComponent
             _tags="enabled_in_world,enabled_in_hand"
-            image_file="mods/th_immortal/files/gohei/cloth.png"
+            image_file="mods/th_immortal/files/gohei/kami.png"
             update_transform="0"
             update_transform_rotation="0"
+            offset_y="0"
         />
         <SpriteComponent
             _tags="enabled_in_world,enabled_in_hand"
-            image_file="mods/th_immortal/files/gohei/cloth.png"
+            image_file="mods/th_immortal/files/gohei/kami.png"
             update_transform="0"
             update_transform_rotation="0"
+            offset_y="-0.5"
         />
         <SpriteComponent
             _tags="enabled_in_world,enabled_in_hand"
-            image_file="mods/th_immortal/files/gohei/cloth.png"
+            image_file="mods/th_immortal/files/gohei/kami.png"
             update_transform="0"
             update_transform_rotation="0"
+            offset_y="-1"
         />
     </Entity>
 
     <LuaComponent
-        _tags="enabled_in_world"
-        script_source_file="mods/th_immortal/files/gohei/cloth.lua"
+        _tags="enabled_in_world,enabled_in_hand"
+        script_source_file="mods/th_immortal/files/gohei/kami.lua"
     />
-
     <LuaComponent
-        script_source_file="mods/th_immortal/files/gohei/sprite.lua"
+        script_source_file="mods/th_immortal/files/gohei/handgun.lua"
         execute_on_added="1"
         execute_every_n_frame="-1"
     />

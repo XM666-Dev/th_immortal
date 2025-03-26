@@ -1,9 +1,9 @@
-<Entity name="$projectile_default" tags="projectile_player,th_immortal.projectile_kami">
+<Entity name="$projectile_default" tags="projectile_player">
     <Base file="data/entities/base_projectile.xml">
         <VelocityComponent
             gravity_y="0"
             air_friction="0.9375"
-            mass="0.015625"
+            mass="0.015"
         />
     </Base>
 
@@ -22,13 +22,15 @@
         muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_medium.xml"
         velocity_sets_scale="1"
         physics_impulse_coeff="0"
-        create_shell_casing="0"
+        on_death_gfx_leave_sprite="0"
     >
         <config_explosion
+            damage="0"
             camera_shake="0"
             explosion_sprite="data/particles/explosion_012_poof.xml"
             create_cell_probability="0"
             hole_enabled="0"
+            crack_count="0"
             particle_effect="0"
             damage_mortals="0"
             sparks_enabled="0"
@@ -38,7 +40,7 @@
     </ProjectileComponent>
 
     <SpriteComponent
-        image_file="mods/th_immortal/files/actions/kami.png"
+        image_file="mods/th_immortal/files/actions/kami/kami.png"
         offset_x="10.5"
         offset_y="6"
         has_special_scale="1"
@@ -169,6 +171,12 @@
 
     <VariableStorageComponent
         name="projectile_file"
-        value_string="mods/th_immortal/files/actions/kami.xml"
+        value_string="mods/th_immortal/files/actions/kami/kami.xml"
+    />
+
+    <LuaComponent
+        script_source_file="mods/th_immortal/files/actions/kami/kami_sprite.lua"
+        execute_on_removed="1"
+        execute_every_n_frame="-1"
     />
 </Entity>
