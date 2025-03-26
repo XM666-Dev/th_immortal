@@ -37,7 +37,6 @@ ModMaterialsFileAdd("mods/th_immortal/files/materials.xml")
 append_translations("mods/th_immortal/files/translations.csv")
 
 local receiver
-local prev_damage_frame = -120
 local prev_power
 function OnWorldPreUpdate()
     if receiver == nil then
@@ -50,14 +49,7 @@ function OnWorldPreUpdate()
     local player = EntityGetWithTag("player_unit")[1]
     if player ~= nil then
         local player_object = Player(player)
-        local damage_model = EntityGetFirstComponent(player, "DamageModelComponent")
-        if damage_model ~= nil then
-            local damage_frame = ComponentGetValue2(damage_model, "mLastDamageFrame")
-            if damage_frame > prev_damage_frame + 180 then
-                prev_damage_frame = damage_frame
-                player_object.power = math.max(player_object.power - 4, 0)
-            end
-        end
+        assert(player_object.script_damage)
         if prev_power ~= nil and get_tier(player_object.power) > get_tier(prev_power) then
             GamePrint("Power up!")
             GamePlaySound("mods/th_immortal/files/audio/th.bank", "event_cues/powerup/create", nil, nil)

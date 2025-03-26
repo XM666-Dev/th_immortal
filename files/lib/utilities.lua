@@ -13,6 +13,7 @@ Saisen = Entity{
 
 Player = Entity{
     power = VariableField("th_immortal.power", "value_int"),
+    script_damage = ComponentField{"LuaComponent", "th_immortal.script_damage", _tags = "th_immortal.script_damage", script_damage_received = "mods/th_immortal/files/scripts/player_damage.lua"},
 }
 
 Projectile = Entity{
