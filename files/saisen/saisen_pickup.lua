@@ -45,7 +45,10 @@ function item_pickup(saisen, pickupper)
     cost = cost * saisen_object.cost_multiplier
 
     local money = ComponentGetValue2(wallet, "money") - cost
-    if money < 0 then return end
+    if money < 0 then
+        GamePrint("You don't have enough money")
+        return
+    end
     ComponentSetValue2(wallet, "money", money)
     saisen_object.pay_count = count
     mod.saisen_count = mod.saisen_count + 1

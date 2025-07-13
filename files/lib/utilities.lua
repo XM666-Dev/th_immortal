@@ -2,6 +2,7 @@ dofile_once("mods/th_immortal/files/lib/tactic.lua")
 
 mod = Entity{
     saisen_count = VariableField("th_immortal.saisen_count", "value_int"),
+    gohei_picked = VariableField("th_immortal.gohei_picked", "value_bool"),
 } (1)
 
 Saisen = Entity{
