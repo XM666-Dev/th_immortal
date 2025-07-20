@@ -46,7 +46,7 @@ function item_pickup(saisen, pickupper)
 
     local money = ComponentGetValue2(wallet, "money") - cost
     if money < 0 then
-        GamePrint("You don't have enough money")
+        GamePrint(GameTextGet("$th_immortal.itempickup_notenoughgold", cost))
         return
     end
     ComponentSetValue2(wallet, "money", money)

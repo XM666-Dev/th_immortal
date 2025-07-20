@@ -38,7 +38,7 @@
 
     <Base file="data/entities/base_item.xml">
         <ItemComponent
-            item_name="Gohei"
+            item_name="$th_immortal.item_gohei"
             remove_on_death="1"
             collect_nondefault_actions="1"
             always_use_item_name_in_ui="1"

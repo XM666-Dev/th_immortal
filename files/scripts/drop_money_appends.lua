@@ -11,8 +11,7 @@ function death(damage_type_bit_field, damage_message, entity_thats_responsible, 
     local raw_do_money_drop = do_money_drop
     do_money_drop = function(amount_multiplier, trick_kill)
         raw_do_money_drop(amount_multiplier, trick_kill)
-        local player_object = Player(entity_thats_responsible)
-        if IsPlayer(entity_thats_responsible) and player_object.power < 256 then
+        if not IsPlayer(entity_thats_responsible) or Player(entity_thats_responsible).power < 256 then
             local this = GetUpdatedEntityID()
             local x, y = EntityGetTransform(this)
             local filename = EntityGetFilename(this)
@@ -33,6 +32,7 @@ function death(damage_type_bit_field, damage_message, entity_thats_responsible, 
                     if f ~= nil then
                         f()
                     end
+                    do_mod_appends(topology.attr.lua_script)
                     setfenv(0, env)
                 end
 

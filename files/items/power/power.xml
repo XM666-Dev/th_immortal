@@ -3,7 +3,7 @@
         auto_pickup="1"
         play_spinning_animation="0"
         play_pick_sound="0"
-        item_name="Power"
+        item_name="$th_immortal.item_power"
     />
     <SpriteComponent
         image_file="mods/th_immortal/files/items/power/power.png"

@@ -8,8 +8,8 @@ end
 insert
 {
     id                  = "TH_IMMORTAL_KAMI",
-    name                = "Kami",
-    description         = "Sacredness",
+    name                = "$th_immortal.action_kami",
+    description         = "$th_immortal.actiondesc_kami",
     spawn_requires_flag = "action_th_immortal_kami",
     sprite              = "mods/th_immortal/files/actions/kami/kami_ui.png",
     related_projectiles = {"mods/th_immortal/files/actions/kami/kami.xml"},
@@ -36,8 +36,8 @@ insert
 }
     {
         id                  = "TH_IMMORTAL_KAMI_TRIGGER",
-        name                = "Kami with trigger",
-        description         = "Sacredness that casts another spell upon collision",
+        name                = "$th_immortal.action_kami_trigger",
+        description         = "$th_immortal.actiondesc_kami_trigger",
         spawn_requires_flag = "action_th_immortal_kami",
         sprite              = "mods/th_immortal/files/actions/kami/kami_trigger_ui.png",
         related_projectiles = {"mods/th_immortal/files/actions/kami/kami.xml"},
@@ -64,8 +64,8 @@ insert
     }
     {
         id                  = "TH_IMMORTAL_KAMI_HOMING",
-        name                = "Homing kami",
-        description         = "Forcefully",
+        name                = "$th_immortal.action_kami_homing",
+        description         = "$th_immortal.actiondesc_kami_homing",
         spawn_requires_flag = "action_th_immortal_kami",
         sprite              = "mods/th_immortal/files/actions/kami_homing/kami_homing_ui.png",
         related_projectiles = {"mods/th_immortal/files/actions/kami_homing/kami_homing.xml"},
@@ -92,8 +92,8 @@ insert
     }
     {
         id                  = "TH_IMMORTAL_ORB_SMALL",
-        name                = "Small orb",
-        description         = "A standard shot",
+        name                = "$th_immortal.action_orb_small",
+        description         = "$th_immortal.actiondesc_orb_small",
         sprite              = "mods/th_immortal/files/actions/orb_small/orb_small.png",
         related_projectiles = {"mods/th_immortal/files/actions/orb_small/orb_small.xml"},
         type                = ACTION_TYPE_PROJECTILE,
@@ -122,8 +122,8 @@ insert
     }
     {
         id                  = "TH_IMMORTAL_ORB_MEDIUM",
-        name                = "Medium orb",
-        description         = "A larger shot",
+        name                = "$th_immortal.action_orb_medium",
+        description         = "$th_immortal.actiondesc_orb_medium",
         sprite              = "mods/th_immortal/files/actions/orb_medium/orb_medium.png",
         related_projectiles = {"mods/th_immortal/files/actions/orb_medium/orb_medium.xml"},
         type                = ACTION_TYPE_PROJECTILE,
@@ -155,8 +155,8 @@ insert
     }
     {
         id                  = "TH_IMMORTAL_ORB_LARGE",
-        name                = "Large orb",
-        description         = "A powerful large shot",
+        name                = "$th_immortal.action_orb_large",
+        description         = "$th_immortal.actiondesc_orb_large",
         sprite              = "mods/th_immortal/files/actions/orb_large/orb_large_ui.png",
         related_projectiles = {"mods/th_immortal/files/actions/orb_large/orb_large.xml"},
         type                = ACTION_TYPE_PROJECTILE,

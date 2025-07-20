@@ -8,8 +8,8 @@
     />
 
     <ItemComponent
-        item_name="Saisen"
-        ui_description="$th_immortal.item_description_saisen"
+        item_name="$th_immortal.item_saisen"
+        ui_description="$th_immortal.itemdesc_saisen"
         custom_pickup_string="$th_immortal.itempickup_pay"
         ui_display_description_on_pick_up_hint="1"
         play_pick_sound="0"

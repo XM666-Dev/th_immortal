@@ -46,8 +46,8 @@
         is_equipable_forced="1"
         ui_sprite="mods/th_immortal/files/jade/jade_ui.png"
         preferred_inventory="QUICK"
-        item_name="Jade"
-        ui_description="Mysterious stuff"
+        item_name="$th_immortal.item_jade"
+        ui_description="$th_immortal.itemdesc_jade"
     ></ItemComponent>
 
     <SpriteComponent

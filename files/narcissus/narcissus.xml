@@ -3,7 +3,7 @@
         <SpriteComponent offset_x="4" offset_y="5" has_special_scale="1" special_scale_y="0.5" />
         <ItemComponent
             play_hover_animation="1"
-            item_name="Narcissus"
+            item_name="$th_immortal.item_narcissus"
             always_use_item_name_in_ui="1"
         />
         <SimplePhysicsComponent _enabled="0" />

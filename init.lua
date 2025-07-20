@@ -49,9 +49,11 @@ function OnWorldPreUpdate()
     local player = EntityGetWithTag("player_unit")[1]
     if player ~= nil then
         local player_object = Player(player)
-        assert(player_object.script_damage)
+        if player_object.script_damage == nil then
+            EntityAddComponent2(player, "LuaComponent", {_tags = "th_immortal.script_damage", script_damage_received = "mods/th_immortal/files/scripts/player_damage.lua"})
+        end
         if prev_power ~= nil and get_tier(player_object.power) > get_tier(prev_power) then
-            GamePrint("Power up!")
+            GamePrint("$th_immortal.log_powerup")
             GamePlaySound("mods/th_immortal/files/audio/th.bank", "event_cues/powerup/create", nil, nil)
         end
         prev_power = player_object.power
@@ -66,7 +68,7 @@ function OnWorldPostUpdate()
     local player = EntityGetWithTag("player_unit")[1]
     if player ~= nil then
         local player_object = Player(player)
-        local text = "Power: " .. player_object.power
+        local text = GameTextGet("$th_immortal.hud_power", player_object.power)
         local text_width, text_height = GuiGetTextDimensions(gui, text)
         local screen_width, screen_height = GuiGetScreenDimensions(gui)
         widget_list_insert(widget_list, GuiText, screen_width - text_width - 10, screen_height - text_height - 10, text)
