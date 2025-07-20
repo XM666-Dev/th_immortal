@@ -24,15 +24,40 @@ function death(damage_type_bit_field, damage_message, entity_thats_responsible, 
             if topology ~= nil and topology.attr.lua_script ~= nil then
                 local biome_script = biome_scripts[topology.attr.lua_script]
                 if biome_script == nil then
-                    biome_script = setmetatable({RegisterSpawnFunction = dummy}, {__index = _G})
+                    local __loadonce = {}
+                    local __loaded = {}
+                    biome_script = setmetatable({
+                        RegisterSpawnFunction = dummy,
+                        dofile_once = function(filename)
+                            local result = nil
+                            local cached = __loadonce[filename]
+                            if cached ~= nil then
+                                result = cached[1]
+                            else
+                                local f, err = loadfile(filename)
+                                if f == nil then return f, err end
+                                result = f()
+                                __loadonce[filename] = {result}
+                                do_mod_appends(filename)
+                            end
+                            return result
+                        end,
+                        dofile = function(filename)
+                            local f = __loaded[filename]
+                            if f == nil then
+                                f, err = loadfile(filename)
+                                if f == nil then return f, err end
+                                __loaded[filename] = f
+                            end
+                            local result = f()
+                            do_mod_appends(filename)
+                            return result
+                        end,
+                    }, {__index = _G})
                     biome_scripts[topology.attr.lua_script] = biome_script
                     local env = getfenv(0)
                     setfenv(0, biome_script)
-                    local f = loadfile(topology.attr.lua_script)
-                    if f ~= nil then
-                        f()
-                    end
-                    do_mod_appends(topology.attr.lua_script)
+                    biome_script.dofile(topology.attr.lua_script)
                     setfenv(0, env)
                 end
 
