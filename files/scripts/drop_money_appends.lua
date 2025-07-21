@@ -79,6 +79,7 @@ function death(damage_type_bit_field, damage_message, entity_thats_responsible, 
                 end
                 if current_group ~= nil then
                     local chance = current_group[2]
+                    SetRandomSeed(x, y)
                     if Random() < chance then
                         for i = 1, amount_multiplier do
                             EntityLoad("mods/th_immortal/files/items/power/power.xml", x, y)
