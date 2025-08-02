@@ -8,8 +8,8 @@ function damage_received(damage, message, responsible, fatal, projectile_respons
         if damage_frame < immune_frame then
             return
         end
-        immune_frame = damage_frame + 180
-        local reduce_amount = 8
+        immune_frame = damage_frame + 330
+        local reduce_amount = 4
         local this_object = Player(this)
         if this_object.power > 128 then
             reduce_amount = math.max((this_object.power - 128) / 2, reduce_amount)
